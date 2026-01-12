@@ -20,3 +20,16 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+## Privacy Settings:
+
+class UserProfile(models.Model):
+    ...
+    is_private = models.BooleanField(default=False)  # Profile visible only to friends/followers
+    allow_comments_from_nonfriends = models.BooleanField(default=True)
+
+## Email verification: Use Django’s EmailMultiAlternatives or packages like django-allauth for verified users.
+
+## Profile search:
+UserProfile.objects.filter(user__username__icontains=query)
