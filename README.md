@@ -1,108 +1,197 @@
-# Complete Social Media Platform
+# Complete Social Media Platform (Django)
 
-A full-stack social media platform built using **Django**, **Django REST Framework**, and **Bootstrap**, providing core social features such as user authentication, posts, comments, likes, friends system, and real-time notifications.
-This project is fully functional, deployable, and demonstrates backend, frontend, and API skills.
+A **fully‑featured social media web application** built using **Django**, **Django REST Framework**, and **modern web technologies**. This project demonstrates real‑world backend and full‑stack development concepts such as authentication, social interactions, real‑time notifications, REST APIs, and cloud deployment.
+
+
+## Project Overview
+
+The **Complete Social Media Platform** allows users to:
+
+* Create profiles and manage personal information
+* Share posts with images
+* Like and comment on posts
+* Send and accept friend requests
+* Follow other users
+* Receive real‑time notifications
+* Access REST APIs for mobile or frontend integration
+
+This project is designed to be **scalable, modular, and portfolio‑ready**.
 
 
 ## Features
-- User Authentication (Register, Login, Logout)
-- User Profiles with bio, profile & cover pictures
-- Create, Edit, and Delete Posts
-- Like & Comment on Posts
-- Friend Requests & Following System
-- Real-time Notifications (Django Channels)
-- REST API for mobile app integration
-- Responsive Frontend using Bootstrap
-- Search and Filtering Functionality
-- Privacy Settings & Content Moderation
-- Deployment-ready for cloud platforms
+
+### User Management
+
+* User registration & login
+* Profile creation with bio, profile picture & cover photo
+* Secure authentication and authorization
+
+### Posts & Interactions
+
+* Create, edit, delete posts
+* Image uploads
+* Like & unlike posts
+* Comment system
+
+### Social Features
+
+* Friend request system
+* Follow / unfollow users
+* Who‑to‑follow suggestions
+
+### Notifications
+
+* Real‑time notifications using **WebSockets (Django Channels)**
+* Notifications for likes, comments & follows
+
+### REST API
+
+* Built using **Django REST Framework**
+* Ready for mobile apps or frontend frameworks
+
+### Frontend
+
+* Responsive UI using **Bootstrap**
+* Clean and user‑friendly design
+
+### Advanced
+
+* Search and filtering
+* Privacy settings
+* Content moderation ready
 
 
 ## Tech Stack
 
-- **Backend:** Python, Django, Django REST Framework  
-- **Frontend:** HTML, CSS, Bootstrap (Django Templates)  
-- **Real-time:** Django Channels  
-- **Database:** SQLite (default) / PostgreSQL (optional)  
-- **Deployment:** Render / Railway / Heroku  
-- **Version Control:** Git & GitHub
+* **Backend:** Python, Django
+* **API:** Django REST Framework
+* **Real‑Time:** Django Channels, WebSockets
+* **Frontend:** HTML, CSS, Bootstrap, JavaScript
+* **Database:** SQLite / PostgreSQL
+* **Media Handling:** Pillow
+* **Deployment:** Render / Railway / Heroku
 
 
-## Project Folder Structure
+## Project Structure
 
-Complete-Social-Media-Platform/
+social_media_platform/
+│── manage.py
+│── requirements.txt
+│── docker-compose.yml
+│── .env.example
+│── README.md
 │
-├── manage.py
-├── requirements.txt
-├── .env.example
-├── social_platform/ # Project configuration
-│ ├── settings.py
-│ ├── urls.py
-│ └── asgi.py # For Channels
-├── users/ # User management app
-│ ├── models.py # UserProfile
-│ ├── views.py
-│ ├── urls.py
-│ └── templates/
-├── posts/ # Posts & interactions
-│ ├── models.py
-│ ├── views.py
-│ └── templates/
-├── friends/ # Friend system & following
-├── notifications/ # Real-time notifications
-├── api/ # REST API endpoints
-├── templates/ # Base templates
-├── static/ # CSS, JS, images
-├── media/ # Uploaded images
-└── tests/ # Test cases
+├── social_media_platform/     # Project settings
+├── users/                     # User & Profile management
+├── posts/                     # Posts, Likes, Comments
+├── friends/                   # Friends & Follow system
+├── notifications/             # Notifications & WebSockets
+├── api/                       # REST API
+├── templates/                 # HTML templates
+├── static/                    # CSS, JS, Images
+├── media/                     # Uploaded files
+├── tests/                     # Test cases
+└── docs/                      # Documentation
 
 
 ## Installation & Setup
 
-1. **Clone the repository**
+### Clone the Repository
+
 ```bash
-git clone https://github.com/<your-username>/Complete-Social-Media-Platform.git
+git clone https://github.com/Srija-Akula/Complete-Social-Media-Platform.git
 cd Complete-Social-Media-Platform
+```
 
-2. Create and activate virtual environment
+### Create Virtual Environment
+
+```bash
 python -m venv venv
-# Windows
-venv\Scripts\activate
-# macOS/Linux
-source venv/bin/activate
+source venv/bin/activate   # Windows: venv\Scripts\activate
+```
 
-3. Install dependencies
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-4. Apply migrations
+### Environment Variables
+
+Create a `.env` file using `.env.example`
+
+```env
+SECRET_KEY=your-secret-key
+DEBUG=True
+DATABASE_URL=sqlite:///db.sqlite3
+```
+
+### Database Migration
+
+```bash
+python manage.py makemigrations
 python manage.py migrate
+```
 
-5.Run development server
+### Create Superuser
+
+```bash
+python manage.py createsuperuser
+```
+
+### Run the Server
+
+```bash
 python manage.py runserver
-Open in browser: http://127.0.0.1:8000/
+```
+
+Open: **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**
 
 
-## API Endpoints
-- /api/posts/ → List/Create Posts
-- /api/comments/ → Add Comments
-- /api/likes/ → Like/Unlike Posts
-- /api/friends/ → Friend Requests & Following
-- /api/notifications/ → User Notifications
-- Swagger documentation available at /swagger/
+## Testing
+
+```bash
+python manage.py test
+```
+
+
+## Deployment
+
+The project is deployment‑ready for:
+
+* **Render**
+* **Railway**
+* **Heroku**
+
+Refer to `docs/deployment.md` for detailed steps.
+
+
+## Sample Output
+
+* User feed with posts
+* Likes & comments
+* Real‑time notifications
+* Profile statistics
 
 
 ## Future Enhancements
-- Real-time chat
-- Groups & Events
-- Advanced content moderation
-- React frontend integration
 
-
-## Author
-Srija Akula
-GitHub: https://github.com/Srija-Akula
+* Real‑time chat system
+* Groups & events
+* Stories feature
+* Dark mode
+* Advanced content moderation
 
 
 ## License
-MIT License
+
+This project is licensed under the **MIT License**.
+
+
+## Author
+
+ Srija Akula
+GitHub: https://github.com/Srija-Akula
+
+
 
