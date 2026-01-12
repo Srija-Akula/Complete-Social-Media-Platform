@@ -29,6 +29,9 @@ class UserProfile(models.Model):
     is_private = models.BooleanField(default=False)  # Profile visible only to friends/followers
     allow_comments_from_nonfriends = models.BooleanField(default=True)
 
+ if profile.is_private and not request.user.is_friend(profile_user):
+    return redirect('access_denied')
+
 
 ## Profile search:
 UserProfile.objects.filter(user__username__icontains=query)
