@@ -166,6 +166,10 @@ The project is deployment‑ready for:
 Refer to `docs/deployment.md` for detailed steps.
 
 
+## swagger documentation
+from drf_yasg.views import get_schema_view
+
+
 ## Sample Output
 
 * User feed with posts
