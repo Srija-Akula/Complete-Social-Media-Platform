@@ -1,0 +1,10 @@
+## Search and filtering:
+
+from django.db.models import Q
+
+def search_posts(request):
+    query = request.GET.get("q")
+    posts = Post.objects.filter(
+        Q(content__icontains=query) |
+        Q(author__username__icontains=query)
+    )
