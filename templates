@@ -1,0 +1,12 @@
+## templates
+
+templates/
+├── base.html
+├── home.html
+└── profile.html
+
+1. static
+static/
+├── css/
+├── js/
+└── images/
