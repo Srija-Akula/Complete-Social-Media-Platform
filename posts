@@ -32,4 +32,4 @@ class Post(models.Model):
 class Post(models.Model):
     ...
     is_flagged = models.BooleanField(default=False)
-    approved = models.BooleanField(default=True)
+    is_approved = models.BooleanField(default=True)
