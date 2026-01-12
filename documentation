@@ -1,0 +1,257 @@
+# Complete Social Media Platform – Project Documentation
+
+## 1. Project Overview
+
+### Project Title
+
+**Complete Social Media Platform**
+
+### Description
+
+The Complete Social Media Platform is a full-stack web application built using **Django** and modern web technologies. It allows users to connect socially by creating profiles, sharing posts, liking and commenting on content, sending friend requests, following users, and receiving real-time notifications. The platform also exposes REST APIs for mobile or third-party integrations and supports deployment to cloud platforms.
+
+### Objectives
+
+* Build a real-world, scalable social media application
+* Demonstrate strong backend architecture using Django
+* Implement social networking features similar to modern platforms
+* Provide REST APIs and real-time updates
+* Deploy a production-ready application
+
+
+## 2. Technology Stack
+
+### Backend
+
+* Python 3.x
+* Django
+* Django REST Framework (DRF)
+* Django Channels (WebSockets)
+
+### Frontend
+
+* HTML5
+* CSS3
+* Bootstrap
+* JavaScript
+
+### Database
+
+* SQLite (Development)
+* PostgreSQL (Production)
+
+### Other Tools
+
+* Git & GitHub
+* Render / Heroku (Deployment)
+* Swagger / OpenAPI (API Documentation)
+
+
+## 3. System Architecture
+
+The application follows a **modular Django architecture**:
+
+* MVC / MVT design pattern
+* Separate Django apps for each major feature
+* REST APIs for external access
+* WebSockets for real-time notifications
+
+### High-Level Flow
+
+1. User sends request via browser or API
+2. Django views / DRF views process request
+3. ORM handles database operations
+4. Response returned as HTML or JSON
+5. WebSocket server pushes notifications in real time
+
+
+## 4. Project Structure
+
+```
+Complete-Social-Media-Platform/
+├── manage.py
+├── requirements.txt
+├── .env.example
+├── social_platform/
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+├── users/
+├── posts/
+├── friends/
+├── notifications/
+├── api/
+├── templates/
+├── static/
+├── media/
+├── tests/
+└── docs/
+```
+
+
+## 5. Feature Description
+
+### 5.1 User Authentication & Profiles
+
+* User registration, login, logout
+* Profile creation with bio, profile picture, cover photo
+* Privacy settings (public / private profiles)
+
+### 5.2 Posts
+
+* Create, edit, delete posts
+* Upload images with posts
+* Post timestamps and ordering
+
+### 5.3 Likes & Comments
+
+* Like and unlike posts
+* Comment on posts
+* Dynamic count of likes and comments
+
+### 5.4 Friend & Following System
+
+* Send and receive friend requests
+* Accept or reject requests
+* Follow and unfollow users
+* Friend suggestions
+
+### 5.5 Notifications
+
+* Notifications for likes, comments, follows
+* Real-time updates using WebSockets
+* Mark notifications as read
+
+### 5.6 Search & Filtering
+
+* Search users by username
+* Search posts by content
+* Filter posts by date or author
+
+### 5.7 Privacy & Content Moderation
+
+* Private profiles visibility control
+* Flag inappropriate posts
+* Admin moderation via Django Admin
+
+### 5.8 REST API
+
+* API endpoints for:
+
+  * Users
+  * Posts
+  * Comments
+  * Friends
+  * Notifications
+* Token-based authentication
+* Swagger API documentation
+
+
+## 6. API Documentation
+
+### API Base URL
+
+```
+/api/
+```
+
+### Sample Endpoints
+
+* `GET /api/posts/`
+* `POST /api/posts/`
+* `POST /api/posts/{id}/like/`
+* `POST /api/posts/{id}/comment/`
+* `GET /api/notifications/`
+
+Swagger UI available at:
+
+```
+/swagger/
+```
+
+
+## 7. Database Design
+
+### Key Models
+
+* User (Django default)
+* UserProfile
+* Post
+* Comment
+* FriendRequest
+* Notification
+
+### Relationships
+
+* One-to-One: User → UserProfile
+* One-to-Many: User → Posts
+* Many-to-Many: Likes, Friends
+
+
+## 8. Security Considerations
+
+* Django authentication & authorization
+* CSRF protection
+* Password hashing
+* Environment variables for secrets
+* Access control for private content
+
+
+## 9. Testing
+
+### Testing Strategy
+
+* Unit tests for models
+* View tests for authentication and permissions
+* API tests using DRF test tools
+
+### Test Coverage
+
+* User registration & login
+* Post creation and interactions
+* Friend request logic
+* Privacy enforcement
+
+
+## 10. Deployment Guide
+
+### Deployment Steps (Render)
+
+1. Push code to GitHub
+2. Create new web service on Render
+3. Set environment variables
+4. Configure database
+5. Run migrations
+6. Collect static files
+7. Deploy application
+
+### Environment Variables
+
+```
+SECRET_KEY=
+DEBUG=False
+DATABASE_URL=
+ALLOWED_HOSTS=
+```
+
+
+## 11. Future Enhancements
+
+* Real-time chat system
+* Groups and communities
+* Events and RSVPs
+* Advanced analytics dashboard
+* Mobile application integration
+
+
+## 12. Conclusion
+
+This project demonstrates a **complete, production-ready social media platform** built using Django. It covers authentication, social interaction, APIs, real-time features, and deployment, making it suitable for academic submission, portfolio presentation, and real-world use.
+
+
+## 13. Author
+
+**Name:** Srija Akula
+**Project:** Complete Social Media Platform
+**Guided by:** ChatGPT
