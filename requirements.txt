@@ -1,13 +1,7 @@
-## requirements.txt
 Django==4.2.16
 djangorestframework==3.16.1
-channels==4.1.0
-asgiref==3.7.2
-Pillow==10.1.0
-
 gunicorn
 whitenoise
+Pillow
+python-dotenv
 psycopg2-binary
-
-
-
