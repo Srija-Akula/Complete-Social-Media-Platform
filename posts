@@ -20,3 +20,8 @@ class Post(models.Model):
 
     def __str__(self):
         return f"Post by {self.author}"
+
+## Search & Filtering:
+--Filter posts by author, keyword, or date:
+
+   Post.objects.filter(content__icontains=query).order_by('-created_at')
