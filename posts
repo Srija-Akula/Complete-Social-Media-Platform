@@ -25,3 +25,11 @@ class Post(models.Model):
 --Filter posts by author, keyword, or date:
 
    Post.objects.filter(content__icontains=query).order_by('-created_at')
+
+
+## content moderation workflow:
+
+class Post(models.Model):
+    ...
+    is_flagged = models.BooleanField(default=False)
+    approved = models.BooleanField(default=True)
