@@ -8,3 +8,6 @@ def search_posts(request):
         Q(content__icontains=query) |
         Q(author__username__icontains=query)
     )
+
+
+posts = Post.objects.filter(content__icontains=query)
