@@ -32,3 +32,11 @@ class UserProfile(models.Model):
 
 ## Profile search:
 UserProfile.objects.filter(user__username__icontains=query)
+
+## privacy controls:
+
+is_private = models.BooleanField(default=False)
+
+logic is as follows:
+if profile.is_private and not current_user.is_friend(profile_user):
+    return HttpResponseForbidden("Profile private")
