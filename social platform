@@ -1,0 +1,9 @@
+## Social Platform
+
+| File          | Purpose                               |
+| ------------- | ------------------------------------- |
+| `settings.py` | Configurations (DB, apps, secret key) |
+| `urls.py`     | Main URL routing                      |
+| `wsgi.py`     | Needed for deployment (Gunicorn)      |
+| `asgi.py`     | Async support                         |
+| `__init__.py` | Python package marker                 |
