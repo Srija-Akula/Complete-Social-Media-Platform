@@ -18,9 +18,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'users',
-    'posts',
-    'friends',
-    'notifications',
-    'api',
+    'users.apps.UsersConfig',
+    'posts.apps.PostsConfig',
+    'friends.apps.FriendsConfig',
+    'notifications.apps.NotificationsConfig',
+    'api.apps.ApiConfig',
+
 ]
