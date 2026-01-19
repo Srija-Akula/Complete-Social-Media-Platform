@@ -20,8 +20,5 @@ INSTALLED_APPS = [
 
     'users.apps.UsersConfig',
     'posts.apps.PostsConfig',
-    'friends.apps.FriendsConfig',
-    'notifications.apps.NotificationsConfig',
-    'api.apps.ApiConfig',
-
 ]
+
