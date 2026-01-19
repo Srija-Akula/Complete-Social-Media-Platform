@@ -33,3 +33,10 @@ class Post(models.Model):
     ...
     is_flagged = models.BooleanField(default=False)
     is_approved = models.BooleanField(default=True)
+
+
+from django.apps import AppConfig
+
+class PostsConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'posts'
